@@ -25,7 +25,7 @@
 #define TVP2 5
 
 &mt {
-    flavor = "tap-preferred";
+    flavor = "balanced";
     tapping-term-ms = <200>;
 };
 
@@ -88,10 +88,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &kp Q       &kp W       &kp E         &kp R        &kp T        &kp Y        &kp U               &kp I         &kp O       &kp P
-           &mt LGUI A  &mt LALT S  &mt LSHIFT D  &mt LCTRL F  &kp G        &kp H        &mt RCTRL J         &mt RSHIFT K  &mt RALT L  &mt RGUI SEMICOLON
-&kp GRAVE  &kp Z       &kp X       &kp C         &kp V        &kp B        &kp N        &kp M               &kp COMMA     &kp DOT     &kp FSLH            &kp BSLH
-                                   &kp TAB       &kp ESCAPE   &kp SPACE    &lt 2 ENTER  &lt 3 SINGLE_QUOTE  &kp BSPC
+           &kp Q       &kp W       &kp E         &kp R         &kp T        &kp Y             &kp U               &kp I         &kp O       &kp P
+           &mt LGUI A  &mt LALT S  &mt LSHIFT D  &mt LCTRL F   &kp G        &kp H             &mt RCTRL J         &mt RSHIFT K  &mt RALT L  &mt RGUI SEMICOLON
+&kp GRAVE  &kp Z       &kp X       &kp C         &kp V         &kp B        &kp N             &kp M               &kp COMMA     &kp DOT     &kp FSLH            &kp EQUAL
+                                   &kp TAB       &lt 3 ESCAPE  &kp SPACE    &mt RSHIFT ENTER  &lt 2 SINGLE_QUOTE  &kp BSPC
             >;
         };
 
@@ -140,10 +140,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp EXCL           &kp AT             &kp HASH             &kp DLLR            &kp PRCNT    &kp CARET         &kp AMPS           &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-        &mt LGUI NUMBER_1  &mt LALT NUMBER_2  &mt LSHIFT NUMBER_3  &mt LCTRL NUMBER_4  &kp N5       &kp NUMBER_6      &mt RCTRL N7       &mt RSHIFT N8  &mt RALT N9           &mt RGUI N0
-&trans  &none              &kp UNDERSCORE     &kp MINUS            &kp EQUAL           &kp PLUS     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans         &trans                &trans                 &trans
-                                              &trans               &trans              &trans       &trans            &trans             &trans
+               &kp EXCL           &kp AT             &kp HASH             &kp DLLR            &kp PRCNT            &kp CARET       &kp AMPS         &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+               &mt LGUI NUMBER_1  &mt LALT NUMBER_2  &mt LSHIFT NUMBER_3  &mt LCTRL NUMBER_4  &kp N5               &kp NUMBER_6    &mt RCTRL N7     &mt RSHIFT N8  &mt RALT N9           &mt RGUI N0
+&kp BACKSLASH  &none              &none              &none                &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &trans                &trans                 &kp MINUS
+                                                     &trans               &trans              &trans               &trans          &trans           &trans
             >;
         };
 
@@ -168,8 +168,8 @@
             bindings = <
                     &kp F1       &kp F2       &kp F3         &kp F4        &kp F5             &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP          &kp END          &kp INS
                     &mt LGUI F6  &mt LALT F7  &mt LSHIFT F8  &mt LCTRL F9  &kp F10            &kp LEFT        &mt RCTRL DOWN  &mt RSHIFT UP_ARROW  &mt RALT RIGHT   &kp DELETE
-&kp LA(LG(DOLLAR))  &kp F11      &kp F12      &kp GLOBE      &kp CAPSLOCK  &kp PRINTSCREEN    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP         &mmv MOVE_RIGHT  &none       &trans
-                                              &trans         &mkp LCLK     &mkp RCLK          &trans          &trans          &trans
+&kp LA(LG(DOLLAR))  &kp F11      &kp F12      &kp GLOBE      &kp CAPSLOCK  &kp PRINTSCREEN    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP         &mmv MOVE_RIGHT  &none       &kp LG(DOLLAR)
+                                              &trans         &trans        &trans             &mkp LCLK       &mkp RCLK       &trans
             >;
         };
 
@@ -192,10 +192,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-            &bt BT_SEL 0     &bt BT_SEL 1              &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &none   &none   &none  &none  &none
-            &kp C_VOLUME_UP  &kp C_BRIGHTNESS_INC      &soft_off          &out OUT_TOG  &sys_reset      &none   &none   &none  &none  &none
-&bt BT_CLR  &kp C_VOL_DN     &kp LC(C_BRIGHTNESS_DEC)  &ext_power EP_TOG  &none         &bootloader     &none   &none   &none  &none  &none  &none
-                                                       &trans             &none         &none           &trans  &trans  &none
+            &bt BT_SEL 0     &bt BT_SEL 1              &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &none  &none   &none  &none  &none
+            &kp C_VOLUME_UP  &kp C_BRIGHTNESS_INC      &soft_off          &out OUT_TOG  &sys_reset      &none  &none   &none  &none  &none
+&bt BT_CLR  &kp C_VOL_DN     &kp LC(C_BRIGHTNESS_DEC)  &ext_power EP_TOG  &none         &bootloader     &none  &none   &none  &none  &none  &none
+                                                       &none              &trans        &none           &none  &trans  &none
             >;
         };
 
