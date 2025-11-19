@@ -169,7 +169,7 @@
                     &kp F1       &kp F2       &kp F3         &kp F4        &kp F5             &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP          &kp END          &kp INS
                     &mt LGUI F6  &mt LALT F7  &mt LSHIFT F8  &mt LCTRL F9  &kp F10            &kp LEFT        &mt RCTRL DOWN  &mt RSHIFT UP_ARROW  &mt RALT RIGHT   &kp DELETE
 &kp LA(LG(DOLLAR))  &kp F11      &kp F12      &kp GLOBE      &kp CAPSLOCK  &kp PRINTSCREEN    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP         &mmv MOVE_RIGHT  &none       &kp LG(DOLLAR)
-                                              &trans         &trans        &trans             &mkp LCLK       &mkp RCLK       &trans
+                                              &trans         &trans        &trans             &mkp LCLK       &trans          &mkp RCLK
             >;
         };
 
