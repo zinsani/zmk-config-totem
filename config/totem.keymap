@@ -88,10 +88,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &kp Q       &kp W       &kp E         &kp R         &kp T        &kp Y             &kp U               &kp I         &kp O       &kp P
-           &mt LGUI A  &mt LALT S  &mt LSHIFT D  &mt LCTRL F   &kp G        &kp H             &mt RCTRL J         &mt RSHIFT K  &mt RALT L  &mt RGUI SEMICOLON
-&kp GRAVE  &kp Z       &kp X       &kp C         &kp V         &kp B        &kp N             &kp M               &kp COMMA     &kp DOT     &kp FSLH            &kp EQUAL
-                                   &kp TAB       &lt 3 ESCAPE  &kp SPACE    &mt RSHIFT ENTER  &lt 2 SINGLE_QUOTE  &kp BSPC
+                 &kp Q       &kp W       &kp E         &kp R         &kp T        &kp Y             &kp U               &kp I         &kp O       &kp P
+                 &mt LGUI A  &mt LALT S  &mt LSHIFT D  &mt LCTRL F   &kp G        &kp H             &mt RCTRL J         &mt RSHIFT K  &mt RALT L  &mt RGUI SEMICOLON
+&mt TILDE GRAVE  &kp Z       &kp X       &kp C         &kp V         &kp B        &kp N             &kp M               &kp COMMA     &kp DOT     &kp FSLH            &mt PLUS EQUAL
+                                         &kp TAB       &lt 3 ESCAPE  &kp SPACE    &mt RSHIFT ENTER  &lt 2 SINGLE_QUOTE  &kp BSPC
             >;
         };
 
@@ -140,10 +140,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-               &kp EXCL           &kp AT             &kp HASH             &kp DLLR            &kp PRCNT            &kp CARET       &kp AMPS         &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-               &mt LGUI NUMBER_1  &mt LALT NUMBER_2  &mt LSHIFT NUMBER_3  &mt LCTRL NUMBER_4  &kp N5               &kp NUMBER_6    &mt RCTRL N7     &mt RSHIFT N8  &mt RALT N9           &mt RGUI N0
-&kp BACKSLASH  &none              &none              &none                &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &trans                &trans                 &kp MINUS
-                                                     &trans               &trans              &trans               &trans          &trans           &trans
+                    &kp EXCL           &kp AT             &kp HASH             &kp DLLR            &kp PRCNT            &kp CARET       &kp AMPS         &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+                    &mt LGUI NUMBER_1  &mt LALT NUMBER_2  &mt LSHIFT NUMBER_3  &mt LCTRL NUMBER_4  &kp N5               &kp NUMBER_6    &mt RCTRL N7     &mt RSHIFT N8  &mt RALT N9           &mt RGUI N0
+&mt PIPE BACKSLASH  &none              &none              &none                &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &trans                &trans                 &mt UNDERSCORE MINUS
+                                                          &trans               &trans              &trans               &trans          &trans           &trans
             >;
         };
 
