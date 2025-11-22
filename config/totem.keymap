@@ -15,7 +15,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -36,33 +35,36 @@
         tab {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
-        toggle_colemak {
-            timeout-ms = <100>;
-            key-positions = <24 23>;
-            bindings = <&tog 1>;
+            bindings = <&kp TAB>;
+            layers = <0 1>;
         };
 
         space {
             bindings = <&kp SPACE>;
             key-positions = <16 17>;
+            timeout-ms = <50>;
+            layers = <0 1>;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <27 28>;
+            timeout-ms = <50>;
+            layers = <0 1>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <15 16>;
+            timeout-ms = <50>;
+            layers = <0 1>;
         };
 
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <8 9>;
+            timeout-ms = <50>;
+            layers = <0 1>;
         };
     };
 
@@ -88,10 +90,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                 &kp Q       &kp W       &kp E         &kp R         &kp T        &kp Y             &kp U               &kp I         &kp O       &kp P
-                 &mt LGUI A  &mt LALT S  &mt LSHIFT D  &mt LCTRL F   &kp G        &kp H             &mt RCTRL J         &mt RSHIFT K  &mt RALT L  &mt RGUI SEMICOLON
-&mt TILDE GRAVE  &kp Z       &kp X       &kp C         &kp V         &kp B        &kp N             &kp M               &kp COMMA     &kp DOT     &kp FSLH            &mt PLUS EQUAL
-                                         &kp TAB       &lt 3 ESCAPE  &kp SPACE    &mt RSHIFT ENTER  &lt 2 SINGLE_QUOTE  &kp BSPC
+            &kp Q       &kp W       &kp E         &kp R        &kp T        &kp Y             &kp U        &kp I         &kp O       &kp P
+            &mt LGUI A  &mt LALT S  &mt LSHIFT D  &mt LCTRL F  &kp G        &kp H             &mt RCTRL J  &mt RSHIFT K  &mt RALT L  &mt RGUI SEMICOLON
+&kp ESCAPE  &kp Z       &kp X       &kp C         &kp V        &kp B        &kp N             &kp M        &kp COMMA     &kp DOT     &kp FSLH            &kp SINGLE_QUOTE
+                                    &kp TAB       &lt 3 GRAVE  &kp SPACE    &mt RSHIFT ENTER  &lt 2 MINUS  &kp EQUAL
             >;
         };
 
@@ -140,10 +142,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                    &kp EXCL           &kp AT             &kp HASH             &kp DLLR            &kp PRCNT            &kp CARET       &kp AMPS         &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-                    &mt LGUI NUMBER_1  &mt LALT NUMBER_2  &mt LSHIFT NUMBER_3  &mt LCTRL NUMBER_4  &kp N5               &kp NUMBER_6    &mt RCTRL N7     &mt RSHIFT N8  &mt RALT N9           &mt RGUI N0
-&mt PIPE BACKSLASH  &none              &none              &none                &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &trans                &trans                 &mt UNDERSCORE MINUS
-                                                          &trans               &trans              &trans               &trans          &trans           &trans
+        &kp EXCL           &kp AT             &kp HASH             &kp DLLR            &kp PRCNT            &kp CARET       &kp AMPS         &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+        &mt LGUI NUMBER_1  &mt LALT NUMBER_2  &mt LSHIFT NUMBER_3  &mt LCTRL NUMBER_4  &kp N5               &kp NUMBER_6    &mt RCTRL N7     &mt RSHIFT N8  &mt RALT N9           &mt RGUI N0
+&trans  &none              &none              &none                &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &trans                &trans                 &trans
+                                              &trans               &trans              &trans               &trans          &trans           &trans
             >;
         };
 
@@ -166,10 +168,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                    &kp F1       &kp F2       &kp F3         &kp F4        &kp F5             &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp INS
-                    &mt LGUI F6  &mt LALT F7  &mt LSHIFT F8  &mt LCTRL F9  &kp F10            &kp LEFT   &kp DOWN       &kp UP_ARROW  &kp RIGHT  &kp DELETE
-&kp LA(LG(DOLLAR))  &kp F11      &kp F12      &kp GLOBE      &kp CAPSLOCK  &kp PRINTSCREEN    &kp RCTRL  &kp RSHIFT     &kp RALT      &kp RGUI   &none       &kp LG(DOLLAR)
-                                              &trans         &trans        &trans             &mkp LCLK  &trans         &mkp RCLK
+                 &kp F1       &kp F2       &kp F3         &kp F4        &kp F5             &kp HOME       &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp INS
+                 &mt LGUI F6  &mt LALT F7  &mt LSHIFT F8  &mt LCTRL F9  &kp F10            &kp LEFT       &kp DOWN       &kp UP_ARROW  &kp RIGHT  &kp DELETE
+&kp C_AC_SEARCH  &kp F11      &kp F12      &kp GLOBE      &kp CAPSLOCK  &kp PRINTSCREEN    &kp RCTRL      &kp RSHIFT     &kp RALT      &kp RGUI   &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &kp C_AC_OPEN
+                                           &trans         &trans        &trans             &kp BACKSPACE  &trans         &trans
             >;
         };
 
@@ -194,7 +196,7 @@
             bindings = <
             &bt BT_SEL 0     &bt BT_SEL 1          &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &none  &none   &none  &none  &none
             &kp C_VOLUME_UP  &kp C_BRIGHTNESS_INC  &soft_off          &out OUT_TOG  &sys_reset      &none  &none   &none  &none  &none
-&bt BT_CLR  &kp C_VOL_DN     &kp C_BRIGHTNESS_DEC  &ext_power EP_TOG  &none         &bootloader     &none  &none   &none  &none  &none  &none
+&bt BT_CLR  &kp C_VOL_DN     &kp C_BRIGHTNESS_DEC  &ext_power EP_TOG  &none         &bootloader     &none  &tog 1  &none  &none  &none  &none
                                                    &none              &trans        &none           &none  &trans  &none
             >;
         };
