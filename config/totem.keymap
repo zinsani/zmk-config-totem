@@ -144,7 +144,7 @@
             bindings = <
         &kp EXCL           &kp AT             &kp HASH             &kp DLLR            &kp PRCNT            &kp CARET       &kp AMPS         &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
         &mt LGUI NUMBER_1  &mt LALT NUMBER_2  &mt LSHIFT NUMBER_3  &mt LCTRL NUMBER_4  &kp N5               &kp NUMBER_6    &mt RCTRL N7     &mt RSHIFT N8  &mt RALT N9           &mt RGUI N0
-&trans  &none              &none              &none                &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &trans                &trans                 &trans
+&trans  &none              &none              &none                &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &trans                &trans                 &kp BACKSLASH
                                               &trans               &trans              &trans               &trans          &trans           &trans
             >;
         };
