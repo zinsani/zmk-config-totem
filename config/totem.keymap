@@ -54,6 +54,17 @@
         };
     };
 
+    behaviors {
+        td_space: td_space {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SPACE";
+            #binding-cells = <0>;
+            bindings = <&mt LGUI SPACE>, <&kp SPACE>;
+
+            tapping-term-ms = <100>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -76,10 +87,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                  &kp Q  &kp W  &kp E          &kp R           &kp T             &kp Y             &kp U        &kp I        &kp O    &kp P
-                  &kp A  &kp S  &kp D          &kp F           &kp G             &kp H             &kp J        &kp K        &kp L    &kp SEMICOLON
-&mt LSHFT ESCAPE  &kp Z  &kp X  &kp C          &kp V           &kp B             &kp N             &kp M        &kp COMMA    &kp DOT  &kp FSLH       &mt RSHIFT SINGLE_QUOTE
-                                &mt LCTRL TAB  &mt LALT GRAVE  &mt LGUI SPACE    &mt RSHIFT ENTER  &lt 2 MINUS  &lt 3 EQUAL
+                  &kp Q  &kp W  &kp E          &kp R           &kp T        &kp Y             &kp U        &kp I        &kp O    &kp P
+                  &kp A  &kp S  &kp D          &kp F           &kp G        &kp H             &kp J        &kp K        &kp L    &kp SEMICOLON
+&mt LSHFT ESCAPE  &kp Z  &kp X  &kp C          &kp V           &kp B        &kp N             &kp M        &kp COMMA    &kp DOT  &kp FSLH       &mt RSHIFT SINGLE_QUOTE
+                                &mt LCTRL TAB  &mt LALT GRAVE  &td_space    &mt RSHIFT ENTER  &lt 2 MINUS  &lt 3 EQUAL
             >;
         };
 
@@ -128,10 +139,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT        &kp CARET         &kp AMPS           &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5           &kp NUMBER_6      &kp N7             &kp N8        &kp N9                &kp N0
-&trans  &none         &none         &none         &none         &kp BACKSLASH    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans        &trans                &trans                 &trans
-                                    &trans        &trans        &trans           &trans            &trans             &trans
+        &kp EXCL      &kp AT        &kp HASH        &kp DLLR         &kp PRCNT        &kp CARET         &kp AMPS           &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp NUMBER_4     &kp N5           &kp NUMBER_6      &kp N7             &kp N8        &kp N9                &kp N0
+&trans  &none         &none         &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BACKSLASH    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans        &trans                &trans                 &trans
+                                    &trans          &trans           &td_space        &trans            &trans             &trans
             >;
         };
 
@@ -154,10 +165,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp F1   &kp F2   &kp F3     &kp F4        &kp F5             &kp HOME  &kp PAGE_DOWN      &kp PAGE_UP                             &kp END    &kp BACKSPACE
-        &kp F6   &kp F7   &kp F8     &kp F9        &kp F10            &kp LEFT  &kp DOWN           &kp UP_ARROW                            &kp RIGHT  &kp DELETE
-&tog 1  &kp F11  &kp F12  &kp GLOBE  &kp CAPSLOCK  &kp PRINTSCREEN    &none     &kp K_APPLICATION  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &none      &kp INS        &kp C_AC_SEARCH
-                          &trans     &trans        &trans             &trans    &trans             &trans
+        &kp F1   &kp F2   &kp F3     &kp F4        &kp F5             &kp HOME  &kp PAGE_DOWN      &kp PAGE_UP                             &kp END          &kp BACKSPACE
+        &kp F6   &kp F7   &kp F8     &kp F9        &kp F10            &kp LEFT  &kp DOWN           &kp UP_ARROW                            &kp RIGHT        &kp DELETE
+&trans  &kp F11  &kp F12  &kp GLOBE  &kp CAPSLOCK  &kp PRINTSCREEN    &tog 1    &kp K_APPLICATION  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &kp C_AC_SEARCH  &kp INS        &trans
+                          &trans     &trans        &td_space          &trans    &trans             &trans
             >;
         };
 
