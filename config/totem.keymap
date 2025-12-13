@@ -34,14 +34,14 @@
 
         lgui {
             timeout-ms = <30>;
-            key-positions = <0 10>;
+            key-positions = <10 21>;
             bindings = <&kp LGUI>;
             layers = <0 1 2 3>;
         };
 
         rgui {
             bindings = <&kp RGUI>;
-            key-positions = <9 19>;
+            key-positions = <19 30>;
             timeout-ms = <30>;
             layers = <0 1 2 3>;
         };
