@@ -73,6 +73,20 @@
             timeout-ms = <30>;
             layers = <0 1 2 3>;
         };
+
+        lshift {
+            bindings = <&kp LSHIFT>;
+            key-positions = <12 23>;
+            timeout-ms = <30>;
+            layers = <0 1 2 3>;
+        };
+
+        rshift {
+            bindings = <&kp RSHIFT>;
+            key-positions = <17 28>;
+            timeout-ms = <30>;
+            layers = <0 1 2 3>;
+        };
     };
 
     behaviors {
