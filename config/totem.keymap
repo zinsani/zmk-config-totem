@@ -47,7 +47,7 @@
         };
 
         lalt {
-            bindings = <&kp SPACE>;
+            bindings = <&kp LALT>;
             key-positions = <11 22>;
             timeout-ms = <30>;
             layers = <0 1 2 3>;
@@ -56,20 +56,6 @@
         ralt {
             bindings = <&kp RALT>;
             key-positions = <18 29>;
-            timeout-ms = <30>;
-            layers = <0 1 2 3>;
-        };
-
-        lshift {
-            bindings = <&kp LSHIFT>;
-            key-positions = <12 23>;
-            timeout-ms = <30>;
-            layers = <0 1 2 3>;
-        };
-
-        rshift {
-            bindings = <&kp RSHIFT>;
-            key-positions = <17 28>;
             timeout-ms = <30>;
             layers = <0 1 2 3>;
         };
