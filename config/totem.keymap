@@ -52,12 +52,6 @@
         };
 
         ralt {
-            bindings = <&kp LALT>;
-            key-positions = <11 22>;
-            timeout-ms = <30>;
-        };
-
-        ralt {
             bindings = <&kp RALT>;
             key-positions = <18 29>;
             timeout-ms = <30>;
