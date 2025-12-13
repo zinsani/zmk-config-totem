@@ -44,11 +44,10 @@
             timeout-ms = <30>;
         };
 
-        space {
+        lalt {
             bindings = <&kp SPACE>;
-            key-positions = <35 36>;
+            key-positions = <11 22>;
             timeout-ms = <30>;
-            layers = <0 1>;
         };
 
         ralt {
