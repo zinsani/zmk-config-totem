@@ -36,48 +36,56 @@
             timeout-ms = <30>;
             key-positions = <0 10>;
             bindings = <&kp LGUI>;
+            layers = <0 1 2 3>;
         };
 
         rgui {
             bindings = <&kp RGUI>;
             key-positions = <9 19>;
             timeout-ms = <30>;
+            layers = <0 1 2 3>;
         };
 
         lalt {
             bindings = <&kp SPACE>;
             key-positions = <11 22>;
             timeout-ms = <30>;
+            layers = <0 1 2 3>;
         };
 
         ralt {
             bindings = <&kp RALT>;
             key-positions = <18 29>;
             timeout-ms = <30>;
+            layers = <0 1 2 3>;
         };
 
         lshift {
             bindings = <&kp LSHIFT>;
             key-positions = <12 23>;
             timeout-ms = <30>;
+            layers = <0 1 2 3>;
         };
 
         rshift {
             bindings = <&kp RSHIFT>;
             key-positions = <17 28>;
             timeout-ms = <30>;
+            layers = <0 1 2 3>;
         };
 
         lctrl {
             bindings = <&kp LCTRL>;
             key-positions = <13 24>;
             timeout-ms = <30>;
+            layers = <0 1 2 3>;
         };
 
         rctrl {
             bindings = <&kp RCTRL>;
             key-positions = <16 27>;
             timeout-ms = <30>;
+            layers = <0 1 2 3>;
         };
     };
 
