@@ -33,7 +33,7 @@
         compatible = "zmk,combos";
 
         lgui {
-            timeout-ms = <30>;
+            timeout-ms = <100>;
             key-positions = <0 10>;
             bindings = <&kp LGUI>;
             layers = <0 1 2 3>;
@@ -42,49 +42,49 @@
         rgui {
             bindings = <&kp RGUI>;
             key-positions = <19 9>;
-            timeout-ms = <30>;
+            timeout-ms = <100>;
             layers = <0 1 2 3>;
         };
 
         lalt {
             bindings = <&kp LALT>;
             key-positions = <11 1>;
-            timeout-ms = <30>;
+            timeout-ms = <100>;
             layers = <0 1 2 3>;
         };
 
         ralt {
             bindings = <&kp RALT>;
             key-positions = <18 8>;
-            timeout-ms = <30>;
+            timeout-ms = <100>;
             layers = <0 1 2 3>;
         };
 
         lctrl {
             bindings = <&kp LCTRL>;
             key-positions = <13 3>;
-            timeout-ms = <30>;
+            timeout-ms = <100>;
             layers = <0 1 2 3>;
         };
 
         rctrl {
             bindings = <&kp RCTRL>;
             key-positions = <16 6>;
-            timeout-ms = <30>;
+            timeout-ms = <100>;
             layers = <0 1 2 3>;
         };
 
         lshift {
             bindings = <&kp LSHIFT>;
             key-positions = <12 2>;
-            timeout-ms = <30>;
+            timeout-ms = <100>;
             layers = <0 1 2 3>;
         };
 
         rshift {
             bindings = <&kp RSHIFT>;
             key-positions = <17 7>;
-            timeout-ms = <30>;
+            timeout-ms = <100>;
             layers = <0 1 2 3>;
         };
     };
