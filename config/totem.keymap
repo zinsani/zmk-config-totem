@@ -123,7 +123,7 @@
                         &kp Q              &kp W              &kp E              &kp R              &kp T                &kp Y              &kp U              &kp I              &kp O              &kp P
                         &hml LGUI A        &hml LALT S        &hml LSHIFT D      &hml LCTRL F       &kp G                &kp H              &hmr RCTRL J       &hmr RSHIFT K      &hmr RALT L        &hmr RGUI SEMICOLON
 &mt LSHFT ESCAPE        &kp Z              &kp X              &kp C              &kp V              &kp B                &kp N              &kp M              &kp COMMA          &kp DOT            &kp FSLH             &mt RSHIFT SINGLE_QUOTE
-                                                              &mt LCTRL TAB      &mt LALT GRAVE     &td_space            &mt RSHIFT ENTER   &lt 2 MINUS        &lt 3 EQUAL
+                                                              &kp TAB            &lt 3 GRAVE        &td_space            &mt RSHIFT ENTER   &lt 2 MINUS        &kp EQUAL
             >;
         };
 
