@@ -3,7 +3,7 @@
 //                                                        ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
 //                                                        █   █  █  █   █  █  █   █  █  █   █
 //                                                         ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
-//                                                               █      ▄▄▄█▄▄▄    █   █  
+//                                                               █      ▄▄▄█▄▄▄    █   █
 //                                                               ▀      █  █  █     █▄█
 //                                                             ▀▀▀▀▀    █  █  █      ▀
 //                                                                      ▀  ▀  ▀
@@ -23,12 +23,45 @@
 #define TVP1 4
 #define TVP2 5
 
+// ============================================
+// Home Row Mods - Cross-hand positional hold-tap
+// ============================================
+#define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25  // Left-hand keys
+#define KEYS_R 5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31  // Right-hand keys
+#define THUMBS 32 33 34 35 36 37                            // Thumb keys
+
 &mt {
     flavor = "balanced";
     tapping-term-ms = <200>;
 };
 
 / {
+    behaviors {
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -77,20 +110,20 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃     Q     ┃     W     ┃     F     ┃     P     ┃     G     ┃   ┃     J     ┃     L     ┃     U     ┃     Y     ┃     ;     ┃
+            //             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃     A     ┃     R     ┃     S     ┃     T     ┃     D     ┃   ┃     H     ┃     N     ┃     E     ┃     I     ┃     O     ┃
+            //             ┃   A/GUI   ┃   S/ALT   ┃   D/SFT   ┃   F/CTL   ┃     G     ┃   ┃     H     ┃   J/CTL   ┃   K/SFT   ┃   L/ALT   ┃   ;/GUI   ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃     Q     ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     K     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \     ┃
+            // ┃  ESC/SFT  ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃   '/SFT   ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃    DEL    ┃    TAB    ┃    SPC    ┃   ┃   ENTER   ┃           ┃   BSPC    ┃
+            //                                     ┃  TAB/CTL  ┃   `/ALT   ┃ SPC/LGUI  ┃   ┃ ENTER/SFT ┃   -/SYM   ┃   =/NAV   ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                  &kp Q  &kp W  &kp E          &kp R           &kp T        &kp Y             &kp U        &kp I        &kp O    &kp P
-                  &kp A  &kp S  &kp D          &kp F           &kp G        &kp H             &kp J        &kp K        &kp L    &kp SEMICOLON
-&mt LSHFT ESCAPE  &kp Z  &kp X  &kp C          &kp V           &kp B        &kp N             &kp M        &kp COMMA    &kp DOT  &kp FSLH       &mt RSHIFT SINGLE_QUOTE
-                                &mt LCTRL TAB  &mt LALT GRAVE  &td_space    &mt RSHIFT ENTER  &lt 2 MINUS  &lt 3 EQUAL
+                        &kp Q              &kp W              &kp E              &kp R              &kp T                &kp Y              &kp U              &kp I              &kp O              &kp P
+                        &hml LGUI A        &hml LALT S        &hml LSHIFT D      &hml LCTRL F       &kp G                &kp H              &hmr RCTRL J       &hmr RSHIFT K      &hmr RALT L        &hmr RGUI SEMICOLON
+&mt LSHFT ESCAPE        &kp Z              &kp X              &kp C              &kp V              &kp B                &kp N              &kp M              &kp COMMA          &kp DOT            &kp FSLH             &mt RSHIFT SINGLE_QUOTE
+                                                              &mt LCTRL TAB      &mt LALT GRAVE     &td_space            &mt RSHIFT ENTER   &lt 2 MINUS        &lt 3 EQUAL
             >;
         };
 
@@ -103,20 +136,20 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃           ┃           ┃     UP    ┃           ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃     +     ┃
+            //             ┃     Q     ┃     W     ┃     F     ┃     P     ┃     G     ┃   ┃     J     ┃     L     ┃     U     ┃     Y     ┃     ;     ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃   SHIFT   ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     -     ┃
+            //             ┃   A/GUI   ┃   R/ALT   ┃   S/SFT   ┃   T/CTL   ┃     D     ┃   ┃     H     ┃   N/CTL   ┃   E/SFT   ┃   I/ALT   ┃   O/GUI   ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃           ┃           ┃   P UP    ┃  C LOCK   ┃  P DOWN   ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃           ┃
+            // ┃           ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     K     ┃     M     ┃     ,     ┃     .     ┃     /     ┃           ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃           ┃    TAB    ┃    SPC    ┃   ┃    DEL    ┃     0     ┃           ┃
+            //                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp Q  &kp W  &kp F   &kp P   &kp G     &kp J   &kp L   &kp U      &kp Y       &kp SEMICOLON
-        &kp A  &kp R  &kp S   &kp T   &kp D     &kp H   &kp N   &kp E      &kp I       &kp O
-&trans  &kp Z  &kp X  &kp C   &kp V   &kp B     &kp K   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH      &trans
-                      &trans  &trans  &trans    &trans  &trans  &trans
+                        &kp Q              &kp W              &kp F              &kp P              &kp G                &kp J              &kp L              &kp U              &kp Y              &kp SEMICOLON
+                        &hml LGUI A        &hml LALT R        &hml LSHIFT S      &hml LCTRL T       &kp D                &kp H              &hmr RCTRL N       &hmr RSHIFT E      &hmr RALT I        &hmr RGUI O
+&trans                  &kp Z              &kp X              &kp C              &kp V              &kp B                &kp K              &kp M              &kp COMMA          &kp PERIOD         &kp SLASH            &trans
+                                                              &trans             &trans             &trans               &trans             &trans             &trans
             >;
         };
 
@@ -129,20 +162,20 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ˆ     ┃     &     ┃     Ü     ┃     '     ┃     "     ┃
+            //             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ^     ┃     &     ┃     *     ┃     (     ┃     )     ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃     Ä     ┃           ┃    SZ     ┃           ┃           ┃   ┃   MUTE    ┃   YEN     ┃   EURO    ┃  POUND    ┃     Ö     ┃
+            //             ┃   1/GUI   ┃   2/ALT   ┃   3/SFT   ┃   4/CTL   ┃     5     ┃   ┃     6     ┃   7/CTL   ┃   8/SFT   ┃   9/ALT   ┃   0/GUI   ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃           ┃  EMAIL1   ┃  EMAIL2   ┃           ┃           ┃           ┃   ┃   VOL-    ┃   VOL+    ┃   LAST    ┃   NEXT    ┃     \     ┃           ┃
+            // ┃           ┃           ┃           ┃     {     ┃     }     ┃     \     ┃   ┃     [     ┃     ]     ┃           ┃           ┃           ┃           ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃           ┃    GIF    ┃    ADJ    ┃   ┃           ┃           ┃           ┃
+            //                                     ┃           ┃           ┃ SPC/LGUI  ┃   ┃           ┃           ┃           ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp EXCL      &kp AT        &kp HASH        &kp DLLR         &kp PRCNT        &kp CARET         &kp AMPS           &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp NUMBER_4     &kp N5           &kp NUMBER_6      &kp N7             &kp N8        &kp N9                &kp N0
-&trans  &none         &none         &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BACKSLASH    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans        &trans                &trans                 &trans
-                                    &trans          &trans           &td_space        &trans            &trans             &trans
+                        &kp EXCL               &kp AT                 &kp HASH               &kp DLLR               &kp PRCNT              &kp CARET          &kp AMPS           &kp ASTERISK       &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS
+                        &hml LGUI NUMBER_1     &hml LALT NUMBER_2     &hml LSHIFT NUMBER_3   &hml LCTRL NUMBER_4    &kp N5                 &kp NUMBER_6       &hmr RCTRL N7      &hmr RSHIFT N8     &hmr RALT N9           &hmr RGUI N0
+&trans                  &none                  &none                  &kp LEFT_BRACE         &kp RIGHT_BRACE        &kp BACKSLASH          &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &trans             &trans                 &trans                   &trans
+                                                                      &trans                 &trans                 &td_space              &trans             &trans             &trans
             >;
         };
 
@@ -155,20 +188,20 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃   RESET   ┃ BT CLEAR  ┃  OUT TOG  ┃           ┃           ┃   ┃           ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
+            //             ┃    F1     ┃    F2     ┃    F3     ┃    F4     ┃    F5     ┃   ┃   HOME    ┃  PAGE DN  ┃  PAGE UP  ┃    END    ┃   BSPC    ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃ BOOTLOAD  ┃ BT NEXT   ┃           ┃           ┃           ┃   ┃           ┃    F4     ┃    F5     ┃    F6     ┃    F11    ┃
+            //             ┃  F6/GUI   ┃  F7/ALT   ┃  F8/SFT   ┃  F9/CTL   ┃    F10    ┃   ┃   LEFT    ┃   DOWN    ┃    UP     ┃   RIGHT   ┃    DEL    ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃           ┃           ┃ BT PREV   ┃           ┃           ┃           ┃   ┃           ┃    F1     ┃    F2     ┃    F3     ┃    F10    ┃           ┃
+            // ┃           ┃    F11    ┃    F12    ┃   GLOBE   ┃   CAPS    ┃   PRTSC   ┃   ┃  TOG CLK  ┃   K_APP   ┃  SHOW ALL ┃  SEARCH   ┃    INS    ┃           ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
+            //                                     ┃           ┃           ┃ SPC/LGUI  ┃   ┃           ┃           ┃           ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp F1   &kp F2   &kp F3     &kp F4        &kp F5             &kp HOME  &kp PAGE_DOWN      &kp PAGE_UP                             &kp END          &kp BACKSPACE
-        &kp F6   &kp F7   &kp F8     &kp F9        &kp F10            &kp LEFT  &kp DOWN           &kp UP_ARROW                            &kp RIGHT        &kp DELETE
-&trans  &kp F11  &kp F12  &kp GLOBE  &kp CAPSLOCK  &kp PRINTSCREEN    &tog 1    &kp K_APPLICATION  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &kp C_AC_SEARCH  &kp INS        &trans
-                          &trans     &trans        &td_space          &trans    &trans             &trans
+                        &kp F1             &kp F2             &kp F3             &kp F4             &kp F5                 &kp HOME           &kp PAGE_DOWN      &kp PAGE_UP        &kp END            &kp BACKSPACE
+                        &hml LGUI F6       &hml LALT F7       &hml LSHIFT F8     &hml LCTRL F9      &kp F10                &kp LEFT           &kp DOWN           &kp UP_ARROW       &kp RIGHT          &kp DELETE
+&trans                  &kp F11            &kp F12            &kp GLOBE          &kp CAPSLOCK       &kp PRINTSCREEN        &tog 1             &kp K_APPLICATION  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &kp C_AC_SEARCH  &kp INS              &trans
+                                                              &trans             &trans             &td_space              &trans             &trans             &trans
             >;
         };
 
@@ -181,20 +214,20 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃ NEXT FILE ┃ MARK IN   ┃ ROTATE    ┃ MARK OUT  ┃ SHOW SNAP ┃   ┃           ┃           ┃           ┃           ┃           ┃
+            //             ┃   BT 0    ┃   BT 1    ┃   BT 2    ┃   BT 3    ┃   BT 4    ┃   ┃  BT CLR   ┃           ┃           ┃           ┃           ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃ TVP II    ┃ LEFT      ┃ PAN       ┃ RIGHT     ┃ PLAY/FLIP ┃   ┃           ┃           ┃           ┃           ┃           ┃
+            //             ┃   VOL+    ┃  BRIGHT+  ┃ SOFT OFF  ┃  OUT TOG  ┃   RESET   ┃   ┃           ┃           ┃           ┃           ┃           ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃ FULLSCR   ┃ SHIFT     ┃ COPY      ┃ DELETE    ┃ PASTE     ┃ IMG MARK  ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+            // ┃           ┃   VOL-    ┃  BRIGHT-  ┃  EXT PWR  ┃           ┃  BOOTLDR  ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃           ┃ UNDO/SAVE ┃  SEL/MOV  ┃   ┃           ┃           ┃           ┃
+            //                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &bt BT_SEL 0     &bt BT_SEL 1          &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_CLR  &none   &none  &none  &none
-       &kp C_VOLUME_UP  &kp C_BRIGHTNESS_INC  &soft_off          &out OUT_TOG  &sys_reset      &none       &none   &none  &none  &none
-&none  &kp C_VOL_DN     &kp C_BRIGHTNESS_DEC  &ext_power EP_TOG  &none         &bootloader     &none       &none   &none  &none  &none  &none
-                                              &none              &trans        &none           &none       &trans  &none
+                        &bt BT_SEL 0       &bt BT_SEL 1           &bt BT_SEL 2           &bt BT_SEL 3       &bt BT_SEL 4           &bt BT_CLR         &none              &none              &none              &none
+                        &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC   &soft_off              &out OUT_TOG       &sys_reset             &none              &none              &none              &none              &none
+&none                   &kp C_VOL_DN       &kp C_BRIGHTNESS_DEC   &ext_power EP_TOG      &none              &bootloader            &none              &none              &none              &none              &none              &none
+                                                                  &none                  &trans             &none                  &none              &trans             &none
             >;
         };
 
