@@ -21,24 +21,24 @@ layers:
   - K
   - L
   - SEMICOLON
-  - shift
-  - {t: Z, h: LGUI}
-  - {t: X, h: option}
-  - {t: C, h: shift}
-  - {t: V, h: ctrl}
+  - {t: esc, h: LSHFT}
+  - Z
+  - X
+  - C
+  - V
   - B
   - N
-  - {t: M, h: ctrl}
-  - {t: COMMA, h: shift}
-  - {t: DOT, h: option}
-  - {t: SLASH, h: RGUI}
-  - {t: EQUAL, h: shift}
-  - esc
-  - MO3
-  - space
+  - M
+  - COMMA
+  - DOT
+  - FSLH
+  - {t: SINGLE QUOTE, h: shift}
+  - {t: tab, h: ctrl}
+  - {t: GRAVE, h: option}
+  - {t: space, h: command, type: tap_dance}
   - {t: enter, h: shift}
-  - MO2
-  - MINUS
+  - {t: MINUS, h: MO2}
+  - {t: EQUAL, h: MO3}
   COLEMAK:
   - Q
   - W
@@ -61,16 +61,16 @@ layers:
   - I
   - O
   - {t: __, type: trans}
-  - {t: Z, h: LGUI}
-  - {t: X, h: option}
-  - {t: C, h: shift}
-  - {t: V, h: ctrl}
+  - Z
+  - X
+  - C
+  - V
   - B
   - K
-  - {t: M, h: ctrl}
-  - {t: COMMA, h: shift}
-  - {t: PERIOD, h: option}
-  - {t: SLASH, h: RGUI}
+  - M
+  - COMMA
+  - PERIOD
+  - SLASH
   - {t: __, type: trans}
   - {t: __, type: trans}
   - {t: __, type: trans}
@@ -100,20 +100,20 @@ layers:
   - '9'
   - '0'
   - {t: __, type: trans}
-  - {t: LEFT BRACE, h: LGUI}
-  - {t: RIGHT BRACE, h: option}
-  - {t: LEFT BRACKET, h: shift}
-  - {t: RIGHT BRACKET, h: ctrl}
-  - {t: __, type: trans}
-  - DOUBLE QUOTES
-  - {t: SINGLE QUOTE, h: ctrl}
-  - {t: __, type: trans}
-  - {t: __, type: trans}
-  - {t: BACKSLASH, h: RGUI}
-  - {t: GRAVE, h: shift}
-  - tab
+  - ''
+  - ''
+  - LEFT BRACE
+  - RIGHT BRACE
+  - BACKSLASH
+  - LEFT BRACKET
+  - RIGHT BRACKET
   - {t: __, type: trans}
   - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: space, h: command, type: tap_dance}
   - {t: __, type: trans}
   - {t: __, type: trans}
   - {t: __, type: trans}
@@ -139,16 +139,16 @@ layers:
   - right
   - del
   - {t: __, type: trans}
-  - {t: F11, h: LGUI}
-  - {t: F12, h: option}
-  - {t: Globe, h: shift}
-  - {t: caps, h: ctrl}
+  - F11
+  - F12
+  - Globe
+  - caps
   - PrtSc
-  - ''
-  - {t: APPLICATION, h: ctrl}
-  - {t: AC DESKTOP SHOW ALL APPLICATIONS, h: shift}
-  - {t: AC SEARCH, h: option}
-  - {t: Ins, h: RGUI}
+  - tog
+  - APPLICATION
+  - AC DESKTOP SHOW ALL APPLICATIONS
+  - AC SEARCH
+  - Ins
   - {t: __, type: trans}
   - {t: __, type: trans}
   - {t: __, type: trans}
@@ -162,11 +162,11 @@ layers:
   - BT2
   - BT3
   - BT4
-  - tog
-  - ''
-  - ''
-  - ''
   - BTclr
+  - ''
+  - ''
+  - ''
+  - ''
   - Vol+
   - Bri+
   - 'off'
