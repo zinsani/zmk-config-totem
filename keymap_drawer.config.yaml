@@ -1,0 +1,109 @@
+draw_config:
+  n_columns: 1
+  draw_key_sides: true
+  shrink_wide_legends: 6
+  glyphs: {}
+
+parse_config:
+  trans_legend:
+    tap: __
+    type: trans
+
+  raw_binding_map:
+    "&hml LGUI": command
+    "&hml LALT": option
+    "&hml LSHIFT": shift
+    "&hml LCTRL": ctrl
+    "&hmr RCTRL": ctrl
+    "&hmr RSHIFT": shift
+    "&hmr RALT": option
+    "&hmr RGUI": command
+    "&td_space":
+      type: tap_dance
+      tap: space
+      hold: command
+    "&bt BT_SEL 0": BT0
+    "&bt BT_SEL 1": BT1
+    "&bt BT_SEL 2": BT2
+    "&bt BT_SEL 3": BT3
+    "&bt BT_SEL 4": BT4
+    "&bt BT_CLR": BTclr
+    "&out OUT_TOG": USB
+    "&sys_reset": reset
+    "&bootloader": bootloader
+    "&soft_off": "off"
+    "&ext_power EP_TOG": "ext"
+    "&tog 1": tog
+    "&mo 2": MO2
+    "&mo 3": MO3
+
+  zmk_keycode_map:
+    LCTRL: ctrl
+    LEFT_CONTROL: ctrl
+    LALT: option
+    LEFT_ALT: option
+    LSHIFT: shift
+    LEFT_SHIFT: shift
+    LCMD: cmd
+    LG: cmd
+    LEFT_GUI: cmd
+    RCTRL: ctrl
+    RIGHT_CONTROL: ctrl
+    RALT: option
+    RIGHT_ALT: option
+    RSHIFT: shift
+    RIGHT_SHIFT: shift
+    RCMD: cmd
+    RG: cmd
+    RIGHT_GUI: cmd
+
+    UP: up
+    DOWN: down
+    LEFT: left
+    RIGHT: right
+
+    ESC: esc
+    ESCAPE: esc
+    TAB: tab
+    SPACE: space
+    ENTER: enter
+    BACKSPACE: bspc
+    DELETE: del
+
+    PAGE_UP: PgUp
+    PAGE_DOWN: PgDn
+
+    CAPSLOCK: caps
+    CAPS: caps
+
+    F1: F1
+    F2: F2
+    F3: F3
+    F4: F4
+    F5: F5
+    F6: F6
+    F7: F7
+    F8: F8
+    F9: F9
+    F10: F10
+    F11: F11
+    F12: F12
+
+    PRINTSCREEN: PrtSc
+
+    HOME: Home
+    END: End
+
+    GLOBE: Globe
+
+    INS: Ins
+
+    C_VOL_UP: Vol+
+    C_VOL_DN: Vol-
+    C_VOLUME_UP: Vol+
+    C_VOLUME_DOWN: Vol-
+    C_BRIGHTNESS_INC: Bri+
+    C_BRIGHTNESS_DEC: Bri-
+
+    BT_SEL: BT
+    BT_CLR: BTclr

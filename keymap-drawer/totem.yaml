@@ -1,0 +1,207 @@
+layout: {zmk_keyboard: totem}
+layers:
+  BASE:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - SEMICOLON
+  - shift
+  - {t: Z, h: LGUI}
+  - {t: X, h: option}
+  - {t: C, h: shift}
+  - {t: V, h: ctrl}
+  - B
+  - N
+  - {t: M, h: ctrl}
+  - {t: COMMA, h: shift}
+  - {t: DOT, h: option}
+  - {t: SLASH, h: RGUI}
+  - {t: EQUAL, h: shift}
+  - esc
+  - MO3
+  - space
+  - {t: enter, h: shift}
+  - MO2
+  - MINUS
+  COLEMAK:
+  - Q
+  - W
+  - F
+  - P
+  - G
+  - J
+  - L
+  - U
+  - Y
+  - SEMICOLON
+  - A
+  - R
+  - S
+  - T
+  - D
+  - H
+  - N
+  - E
+  - I
+  - O
+  - {t: __, type: trans}
+  - {t: Z, h: LGUI}
+  - {t: X, h: option}
+  - {t: C, h: shift}
+  - {t: V, h: ctrl}
+  - B
+  - K
+  - {t: M, h: ctrl}
+  - {t: COMMA, h: shift}
+  - {t: PERIOD, h: option}
+  - {t: SLASH, h: RGUI}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  SYM:
+  - EXCL
+  - AT
+  - HASH
+  - DLLR
+  - PRCNT
+  - CARET
+  - AMPS
+  - ASTERISK
+  - LEFT PARENTHESIS
+  - RIGHT PARENTHESIS
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: __, type: trans}
+  - {t: LEFT BRACE, h: LGUI}
+  - {t: RIGHT BRACE, h: option}
+  - {t: LEFT BRACKET, h: shift}
+  - {t: RIGHT BRACKET, h: ctrl}
+  - {t: __, type: trans}
+  - DOUBLE QUOTES
+  - {t: SINGLE QUOTE, h: ctrl}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: BACKSLASH, h: RGUI}
+  - {t: GRAVE, h: shift}
+  - tab
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  NAVFN:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - Home
+  - PgDn
+  - PgUp
+  - End
+  - bspc
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - left
+  - down
+  - UP ARROW
+  - right
+  - del
+  - {t: __, type: trans}
+  - {t: F11, h: LGUI}
+  - {t: F12, h: option}
+  - {t: Globe, h: shift}
+  - {t: caps, h: ctrl}
+  - PrtSc
+  - ''
+  - {t: APPLICATION, h: ctrl}
+  - {t: AC DESKTOP SHOW ALL APPLICATIONS, h: shift}
+  - {t: AC SEARCH, h: option}
+  - {t: Ins, h: RGUI}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: space, h: command, type: tap_dance}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  MISC:
+  - BT0
+  - BT1
+  - BT2
+  - BT3
+  - BT4
+  - tog
+  - ''
+  - ''
+  - ''
+  - BTclr
+  - Vol+
+  - Bri+
+  - 'off'
+  - USB
+  - reset
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Vol-
+  - Bri-
+  - ext
+  - ''
+  - bootloader
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: __, type: trans}
+  - ''
+  - ''
+  - {t: __, type: trans}
+  - ''
+combos:
+- p: [0, 1]
+  k: tab
+  l: [BASE, COLEMAK]
+- p: [8, 9]
+  k: bspc
+  l: [BASE, COLEMAK]
+- p: [35, 36]
+  k: space
+  l: [BASE, COLEMAK]
