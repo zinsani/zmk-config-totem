@@ -21,7 +21,7 @@ layers:
   - K
   - L
   - SEMICOLON
-  - shift
+  - {t: esc, h: shift}
   - {t: Z, h: LGUI}
   - {t: X, h: option}
   - {t: C, h: shift}
@@ -33,7 +33,7 @@ layers:
   - {t: DOT, h: option}
   - {t: SLASH, h: RGUI}
   - {t: EQUAL, h: shift}
-  - esc
+  - {t: tab, h: Alt+Ctl+cmd}
   - MO3
   - space
   - {t: enter, h: shift}
@@ -111,7 +111,7 @@ layers:
   - {t: __, type: trans}
   - {t: BACKSLASH, h: RGUI}
   - {t: GRAVE, h: shift}
-  - tab
+  - {t: __, type: trans}
   - {t: __, type: trans}
   - {t: __, type: trans}
   - {t: __, type: trans}
