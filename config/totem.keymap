@@ -70,7 +70,7 @@
         tab {
             timeout-ms = <30>;
             key-positions = <0 1>;
-            bindings = <&kp TAB>;
+            bindings = <&mt LA(LC(LGUI)) TAB>;
             layers = <0 1>;
         };
 
@@ -81,11 +81,16 @@
             layers = <0 1>;
         };
 
-        space {
-            bindings = <&kp SPACE>;
-            key-positions = <35 36>;
+        quote {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <18 19>;
             timeout-ms = <30>;
             layers = <0 1>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <10 11>;
         };
     };
 
@@ -122,10 +127,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                    &kp Q        &kp W        &kp E                     &kp R         &kp T        &kp Y             &kp U         &kp I              &kp O          &kp P
-                    &kp A        &kp S        &kp D                     &kp F         &kp G        &kp H             &kp J         &kp K              &kp L          &kp SEMICOLON
-&mt LEFT_SHIFT ESC  &hml LGUI Z  &hml LALT X  &hml LSHIFT C             &hml LCTRL V  &kp B        &kp N             &hmr RCTRL M  &hmr RSHIFT COMMA  &hmr RALT DOT  &hmr RGUI SLASH  &mt RSHIFT EQUAL
-                                              &mt LA(LC(LEFT_GUI)) TAB  &mo 3         &kp SPACE    &mt RSHIFT ENTER  &mo 2         &kp MINUS
+                &kp Q        &kp W        &kp E          &kp R         &kp T        &kp Y             &kp U         &kp I              &kp O          &kp P
+                &kp A        &kp S        &kp D          &kp F         &kp G        &kp H             &kp J         &kp K              &kp L          &kp SEMICOLON
+&kp LEFT_SHIFT  &hml LGUI Z  &hml LALT X  &hml LSHIFT C  &hml LCTRL V  &kp B        &kp N             &hmr RCTRL M  &hmr RSHIFT COMMA  &hmr RALT DOT  &hmr RGUI SLASH  &kp RSHIFT
+                                          &kp ESCAPE     &mo 3         &kp SPACE    &mt RSHIFT ENTER  &mo 2         &kp MINUS
             >;
         };
 
@@ -174,10 +179,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp EXCL              &kp AT                 &kp HASH                  &kp DLLR                  &kp PRCNT    &kp CARET          &kp AMPS                 &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-        &kp NUMBER_1          &kp NUMBER_2           &kp NUMBER_3              &kp NUMBER_4              &kp N5       &kp NUMBER_6       &kp N7                   &kp N8        &kp N9                &kp N0
-&trans  &hml LGUI LEFT_BRACE  &hml LALT RIGHT_BRACE  &hml LSHIFT LEFT_BRACKET  &hml LCTRL RIGHT_BRACKET  &trans       &kp DOUBLE_QUOTES  &hmr RCTRL SINGLE_QUOTE  &trans        &trans                &hmr RGUI BACKSLASH    &mt LEFT_SHIFT GRAVE
-                                                     &trans                    &trans                    &trans       &trans             &trans                   &trans
+        &kp GRAVE     &none         &none         &none         &none     &none         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp EQUAL
+        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &kp NUMBER_6  &kp N7            &kp N8             &kp N9         &kp N0
+&trans  &trans        &trans        &trans        &trans        &trans    &trans        &trans            &trans             &trans         &trans     &trans
+                                    &trans        &trans        &trans    &trans        &trans            &trans
             >;
         };
 
