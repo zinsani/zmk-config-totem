@@ -21,7 +21,7 @@ layers:
   - K
   - L
   - SEMICOLON
-  - {t: esc, h: shift}
+  - shift
   - {t: Z, h: LGUI}
   - {t: X, h: option}
   - {t: C, h: shift}
@@ -32,8 +32,8 @@ layers:
   - {t: COMMA, h: shift}
   - {t: DOT, h: option}
   - {t: SLASH, h: RGUI}
-  - {t: EQUAL, h: shift}
-  - {t: tab, h: Alt+Ctl+cmd}
+  - shift
+  - esc
   - MO3
   - space
   - {t: enter, h: shift}
@@ -79,16 +79,16 @@ layers:
   - {t: __, type: trans}
   - {t: __, type: trans}
   SYM:
-  - EXCL
-  - AT
-  - HASH
-  - DLLR
-  - PRCNT
-  - CARET
-  - AMPS
-  - ASTERISK
-  - LEFT PARENTHESIS
-  - RIGHT PARENTHESIS
+  - GRAVE
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - LEFT BRACKET
+  - RIGHT BRACKET
+  - BACKSLASH
+  - EQUAL
   - '1'
   - '2'
   - '3'
@@ -100,17 +100,17 @@ layers:
   - '9'
   - '0'
   - {t: __, type: trans}
-  - {t: LEFT BRACE, h: LGUI}
-  - {t: RIGHT BRACE, h: option}
-  - {t: LEFT BRACKET, h: shift}
-  - {t: RIGHT BRACKET, h: ctrl}
-  - {t: __, type: trans}
-  - DOUBLE QUOTES
-  - {t: SINGLE QUOTE, h: ctrl}
   - {t: __, type: trans}
   - {t: __, type: trans}
-  - {t: BACKSLASH, h: RGUI}
-  - {t: GRAVE, h: shift}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
+  - {t: __, type: trans}
   - {t: __, type: trans}
   - {t: __, type: trans}
   - {t: __, type: trans}
@@ -197,11 +197,13 @@ layers:
   - ''
 combos:
 - p: [0, 1]
-  k: tab
+  k: {t: tab, h: Alt+Ctl+LGUI}
   l: [BASE, COLEMAK]
 - p: [8, 9]
   k: bspc
   l: [BASE, COLEMAK]
-- p: [35, 36]
-  k: space
+- p: [18, 19]
+  k: SINGLE QUOTE
   l: [BASE, COLEMAK]
+- p: [10, 11]
+  k: esc
