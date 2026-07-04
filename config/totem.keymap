@@ -91,6 +91,8 @@
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <10 11>;
+            timeout-ms = <30>;
+            layers = <0 1>;
         };
     };
 
