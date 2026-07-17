@@ -198,7 +198,7 @@ layers:
 combos:
 - p: [0, 1]
   k: {t: tab, h: Alt+Ctl+LGUI}
-  l: [BASE, COLEMAK]
+  l: [BASE, COLEMAK, SYM, NAVFN]
 - p: [8, 9]
   k: bspc
   l: [BASE, COLEMAK]
